@@ -24,6 +24,7 @@ Attributes
 * `node["tomcat"]["ajp_port"]` - The network port used by Tomcat's AJP connector, default `8009`.
 * `node["tomcat"]["java_options"]` - Extra options to pass to the JVM, default `-Xmx128M -Djava.awt.headless=true`.
 * `node["tomcat"]["use_security_manager"]` - Run Tomcat under the Java Security Manager, default `false`.
+* `node["tomcat"]["timezone"]` - Set a timezone that is different from the system timezone, default is unset (`nil`).
 
 Usage
 =====

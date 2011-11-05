@@ -34,6 +34,11 @@ JAVA_OPTS="<%= node["tomcat"]["java_options"] %>"
 # Use a CMS garbage collector for improved response time
 JAVA_OPTS="${JAVA_OPTS} -XX:+UseConcMarkSweepGC"
 
+<% if node["tomcat"]["timezone"] -%>
+# Set a timezone different from the system timezone
+JAVA_OPTS="${JAVA_OPTS} -Duser.timezone=<%= node["tomcat"]["timezone"] %>"
+<% end -%>
+
 # When using the CMS garbage collector, you should enable the following option
 # if you run Tomcat on a machine with exactly one CPU chip that contains one
 # or two cores.
